@@ -17,20 +17,20 @@ const productList = [
   }
 ]
 
-export function ListProduto() {
-  const [filteredProdutos, setFilteredProdutos] = useState<Product[]>([])
+export function ProductList() {
+  const [filteredProduct, setFilteredProduct] = useState<Product[]>([])
 
-  function searchProduto(search: string) {
+  function searchProduct(search: string) {
     const filtrado = productList.filter(product => product.title.includes(search))
 
-    setFilteredProdutos(filtrado)
+    setFilteredProduct(filtrado)
   }
 
   return (
     <div>
-      <input type="text" onChange={(e) => searchProduto(e.target.value)} />
+      <input type="text" onChange={(e) => searchProduct(e.target.value)} />
 
-      {filteredProdutos.map(produto => (
+      {filteredProduct.map(produto => (
         <div>
           <p>{produto.title}</p>
           <p>{produto.price}</p>
